@@ -1,11 +1,6 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import "./App.css"
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="App">
       <div>
@@ -16,7 +11,7 @@ function App() {
           <img
             src="https://d201zbfblqcbtj.cloudfront.net/assets/logo/logo-mark-white-2fbbeb3ffb17655c304b85b742a1db5945649c27a85abaf83dd52b8cdbbef4a1.svg"
             className="logo"
-            alt="Vite logo"
+            alt="AppSignal"
           />
         </a>
       </div>
@@ -25,7 +20,7 @@ function App() {
         Clique na logo para consultar a documentação
       </p>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

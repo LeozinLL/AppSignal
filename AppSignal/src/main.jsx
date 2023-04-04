@@ -1,10 +1,24 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import "./index.css"
+import React from "react"
+import ReactDOM from "react-dom/client"
+import App from "./App"
+import { appsignal } from "./appsignal"
+import { ErrorBoundary } from "@appsignal/react"
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+const FallbackComponent = () => <div>Oh não... Ocorreu um erro!</div>
+
+const AppSignal = () => (
+  <ErrorBoundary
+    instance={appsignal}
+    tags={{ tag: "value" }}
+    fallback={(error) => <FallbackComponent />}
+  >
     <App />
-  </React.StrictMode>,
+  </ErrorBoundary>
+)
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <AppSignal />
+  </React.StrictMode>
 )
